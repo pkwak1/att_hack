@@ -1,17 +1,37 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
-    <p>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-    If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
-    </p>
+
+
+
+
+    <ion-header-bar class="bar-positive">
+      <h1 class="title" ng-touchstart="onTouch()" on-drag="onTouch()">TRACKING MANY FINGERS</h1>
+      <p>Touch Count: {{touchCount}}</p>
+    </ion-header-bar>
+
+    <ion-content class="full" scroll="false">
+      <h4 id="touchpad" class="full padding">Drag below with > 1 fingers.<br />Press and hold Shift + mouse key to emulate multitouch on a computer.</h4>
+      <div class="full world padding">
+        <div id="container">
+          <div class="debug" ng-repeat="touch in touches">
+            touches[{{$index}}] = FINGER <strong>{{touch.id}}</strong>:  ({{touch.pageX}},  {{touch.pageY}})
+          </div>
+          <div class="debug" ng-repeat="msg in messages">{{msg.txt}}</div>
+
+          <div id="t0" class="circle">0</div>
+          <div id="t1" class="circle">1</div>
+          <div id="t2" class="circle">2</div>
+          <div id="t3" class="circle">3</div>
+          <div id="t4" class="circle">4</div>
+          <div id="t5" class="circle">5</div>
+          <div id="t6" class="circle">5</div>
+          <div id="t7" class="circle">7</div>
+          <div id="t8" class="circle">8</div>
+          <div id="t9" class="circle">9</div>
+
+        </div>
+
+
+      </div>
   </ion-content>
 </ion-view>

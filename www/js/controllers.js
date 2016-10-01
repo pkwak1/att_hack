@@ -25,4 +25,25 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('MultiCtrl',  function($scope, $ionicGesture) {
+  alert('Multiple Touch');
+  $scope.messages = [];
+  $scope.touchCount = 0;
+  var touchpad = angular.element(document.querySelector('#touchpad'));
+  var maxFingers = 10;
+  var fingers = [];
+  for(var i=0; i<maxFingers; i++)  fingers.push(angular.element(document.querySelector('#t'+i)))
+  $scope.touches = new Array;
+  $scope.onTouch = function(){
+    $scope.touchCount += 1;
+  }
+  alert("ready");
+
+
+
+
+
+
 });
