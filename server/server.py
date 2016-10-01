@@ -1,4 +1,5 @@
 import socket
+import json
 
 HOST, PORT = '', 8888
 
@@ -11,6 +12,10 @@ while True:
     client_connection, client_address = listen_socket.accept()
     request = client_connection.recv(1024)
     print request
+
+    with open("dummy.json") as json_file:
+        d = json.load(json_file)
+        print(d)
 
     http_response = """\
 HTTP/1.1 200 OK
