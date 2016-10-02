@@ -16,7 +16,6 @@ def home():
         password='IY2KB0panLuF')
 
     analytics = request.args.get("analytics")
-    return analytics
 
     with open(join(dirname(__file__), 'userAnalyticsPy.json')) as data_file:
         problem_data = json.load(data_file)
@@ -27,11 +26,14 @@ def home():
         solutionNum = solutionNum+1
     firstChoice = resolution["resolution"]["solutions"][solutionNum]["solution_ref"]
     index = int(firstChoice)-1
-    reccomend = resolution["problem"]["options"][index]["name"]
-    moduleReccomend = {
+    module = resolution["problem"]["options"][index]["name"]
+    initial = "We recomend that you practice the "
+    return initial+module
+
+    '''moduleReccomend = {
         "success": reccomend,
     }
-    return jsonify(**moduleReccomend)
+    return jsonify(**moduleReccomend)'''
 
 
 if __name__ == "__main__":

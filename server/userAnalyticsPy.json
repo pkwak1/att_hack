@@ -46,7 +46,7 @@
     {
       "key": "speedAccRatio",
       "type": "numeric",
-      "goal": "min",
+      "goal": "mins",
       "is_objective": true,
       "full_name": "Speed and Accuracy Ratio",
        "range": {
